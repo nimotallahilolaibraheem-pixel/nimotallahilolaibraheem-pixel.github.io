@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10243e">
+  <meta name="description" content="Portfolio of Nimotallahi Ibraheem — writer and content creator focused on reflective writing, health communication, faith, and lifestyle.">
+  <title>Nimotallahi Ibraheem | Writer & Content Creator</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --surface: #ffffff;
+      --ink: #10243e;
+      --muted: #58677c;
+      --line: #dce2eb;
+      --accent: #a98227;
+      --accent-soft: #f3ead5;
+      --button: #10243e;
+      --button-text: #ffffff;
+      --shadow: 0 14px 40px rgba(16, 36, 62, .06);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --bg: #0b192b;
+        --surface: #10233b;
+        --ink: #f0f3f8;
+        --muted: #b1bdce;
+        --line: #263b56;
+        --accent: #d9b85e;
+        --accent-soft: #2a2a24;
+        --button: #d9b85e;
+        --button-text: #10243e;
+        --shadow: 0 14px 40px rgba(0, 0, 0, .16);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; }
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 400 1rem/1.7 "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-underline-offset: 4px; text-decoration-color: var(--accent); }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 3px; }
+    .skip-link {
+      position: absolute; left: -9999px; top: 1rem; z-index: 10;
+      padding: .7rem 1rem; background: var(--surface); color: var(--ink);
+    }
+    .skip-link:focus { left: 1rem; }
+    .wrap { width: min(100% - 2.5rem, 52rem); margin-inline: auto; }
+
+    .topline {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; padding-block: 1.25rem; border-bottom: 1px solid var(--line);
+      color: var(--muted); font-size: .88rem;
+    }
+    .monogram { color: var(--ink); font-weight: 700; letter-spacing: .08em; }
+    .topline nav { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .topline nav a { text-decoration: none; }
+    .topline nav a:hover { text-decoration: underline; }
+
+    .hero { padding-block: clamp(3.5rem, 9vw, 6.5rem) 4rem; }
+    .eyebrow {
+      display: inline-block; margin: 0 0 1.2rem; color: var(--accent);
+      font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+    }
+    h1, h2, h3, .work-title { font-family: "Fraunces", Georgia, serif; font-weight: 600; }
+    h1 {
+      max-width: 13ch; margin: 0 0 1rem;
+      font-size: clamp(3rem, 10vw, 5.4rem); line-height: .99; letter-spacing: -.035em;
+    }
+    .role { margin: 0 0 1.5rem; color: var(--muted); font-size: 1.12rem; }
+    .intro {
+      max-width: 39rem; margin: 0 0 2rem; padding-left: 1.1rem;
+      border-left: 3px solid var(--accent); font-size: clamp(1.12rem, 3vw, 1.35rem);
+      line-height: 1.55;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: .8rem; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 2.9rem; padding: .7rem 1.15rem; border: 1px solid var(--button);
+      border-radius: .35rem; background: var(--button); color: var(--button-text);
+      font-weight: 700; text-decoration: none;
+    }
+    .button.secondary { background: transparent; color: var(--ink); border-color: var(--accent); }
+    .button:hover { transform: translateY(-1px); }
+
+    .section { padding-block: 2.8rem; border-top: 1px solid var(--line); }
+    .section-heading { margin: 0 0 1.2rem; font-size: clamp(1.7rem, 5vw, 2.15rem); }
+    .section p { max-width: 43rem; margin: 0 0 1rem; }
+    .note { color: var(--muted); font-size: .94rem; }
+
+    .services {
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem; margin: 0; padding: 0; list-style: none;
+    }
+    .service {
+      padding: 1.1rem; border: 1px solid var(--line); border-radius: .5rem;
+      background: var(--surface);
+    }
+    .service h3 { margin: 0 0 .35rem; font-size: 1.18rem; }
+    .service p { margin: 0; color: var(--muted); font-size: .94rem; }
+
+    .category { margin: 2rem 0 .5rem; color: var(--accent); font-size: .78rem; font-family: "DM Sans", sans-serif; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .work-list { margin: 0; padding: 0; list-style: none; }
+    .work-item { padding: 1rem 0; border-bottom: 1px solid var(--line); }
+    .work-item a { display: inline-block; text-decoration: none; }
+    .work-title { display: block; margin-bottom: .25rem; font-size: 1.25rem; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; }
+    .work-item a:hover .work-title { text-decoration-thickness: 3px; }
+    .work-desc { display: block; color: var(--muted); font-size: .94rem; }
+
+    .credentials {
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .85rem;
+      margin: 0; padding: 0; list-style: none;
+    }
+    .credentials li { padding: 1rem; border-left: 2px solid var(--accent); background: var(--surface); }
+    .contact-panel {
+      padding: clamp(1.25rem, 5vw, 2rem); border: 1px solid var(--line);
+      border-radius: .6rem; background: var(--surface); box-shadow: var(--shadow);
+    }
+    .email { overflow-wrap: anywhere; font-weight: 700; }
+    footer { padding-block: 2rem 2.5rem; color: var(--muted); font-size: .88rem; }
+
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 2rem, 52rem); }
+      .topline { align-items: flex-start; flex-direction: column; }
+      .topline nav { gap: .85rem; }
+      .services, .credentials { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button:hover { transform: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="wrap">
+    <header class="topline">
+      <a class="monogram" href="#top" aria-label="Nimotallahi Ibraheem, home">NI.</a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#work">Writing</a>
+        <a href="#credentials">Background</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="intro-title">
+        <p class="eyebrow">Writing portfolio</p>
+        <h1 id="intro-title">Nimotallahi Ibraheem</h1>
+        <p class="role">Writer &amp; Content Creator</p>
+        <p class="intro">I create clear, thoughtful writing about faith, health, personal growth, and everyday life, in English and Yoruba.</p>
+        <div class="actions">
+          <a class="button" href="#work">Explore my writing</a>
+          <a class="button secondary" href="mailto:nimotallahilolaibraheem@gmail.com">Get in touch</a>
+        </div>
+      </section>
+
+      <section class="section" id="about" aria-labelledby="about-title">
+        <h2 class="section-heading" id="about-title">A little about me</h2>
+        <p>I’m a Nigeria-based writer and content creator. I began publishing my writing online in August 2022 and have continued to explore how words can inform, encourage, and help people see familiar subjects from a new perspective.</p>
+        <p>My interests include reflective essays, faith-centred writing, health communication, and lifestyle content. As a nursing student, I’m developing my understanding of health topics and enjoy translating what I learn into accessible, carefully researched writing.</p>
+        <p>I also run Nimah Exquisite Collection, an online business that has given me practical experience with product presentation, customer communication, and writing for a small brand.</p>
+        <p class="note">I approach health topics as a student writer and communicator, not as a substitute for professional medical advice.</p>
+      </section>
+
+      <section class="section" id="services" aria-labelledby="services-title">
+        <h2 class="section-heading" id="services-title">How I can help</h2>
+        <ul class="services">
+          <li class="service">
+            <h3>Articles &amp; blog posts</h3>
+            <p>Readable, well-structured articles that explain ideas and keep the reader in mind.</p>
+          </li>
+          <li class="service">
+            <h3>Social media writing</h3>
+            <p>Captions and written posts shaped around a person’s or brand’s voice.</p>
+          </li>
+          <li class="service">
+            <h3>Website &amp; product copy</h3>
+            <p>Clear descriptions and website text that help people understand an offer.</p>
+          </li>
+          <li class="service">
+            <h3>Health communication</h3>
+            <p>Accessible educational content on health topics, patient awareness, and health rights, supported by credible sources.</p>
+          </li>
+          <li class="service">
+            <h3>Reflective &amp; faith-centred writing</h3>
+            <p>Personal essays and thoughtful reminders written with warmth and clarity.</p>
+          </li>
+          <li class="service">
+            <h3>English–Yoruba content</h3>
+            <p>Writing and content adaptation for readers in English and Yoruba.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" id="work" aria-labelledby="work-title">
+        <h2 class="section-heading" id="work-title">Selected writing</h2>
+        <p class="note">A selection of published pieces that reflects my interests, voice, and approach to research.</p>
+
+        <h3 class="category">Reflection</h3>
+        <ul class="work-list">
+          <li class="work-item">
+            <a href="https://nimotallahiibraheem.blogspot.com/2025/05/pained-pen-bleeds-secret-therapy.html" target="_blank" rel="noopener noreferrer">
+              <span class="work-title">Pained Pen Bleeds: The Secret Therapy</span>
+              <span class="work-desc">A personal reflection on writing and journaling as a private space for expression.</span>
+            </a>
+          </li>
+        </ul>
+
+        <h3 class="category">Health</h3>
+        <ul class="work-list">
+          <li class="work-item">
+            <a href="https://nimotallahiibraheem.blogspot.com/2026/10/emergency-care-is-right-not-privilege.html" target="_blank" rel="noopener noreferrer">
+              <span class="work-title">Emergency Care Is a Right, Not a Privilege</span>
+              <span class="work-desc">An accessible discussion of the right to emergency treatment under Nigeria’s National Health Act 2014.</span>
+            </a>
+          </li>
+          <li class="work-item">
+            <a href="https://nimotallahiibraheem.blogspot.com/2026/09/love-culture-and-harm-what-desert.html" target="_blank" rel="noopener noreferrer">
+              <span class="work-title">Love, Culture, and Harm: What Desert Flower Made Me Confront</span>
+              <span class="work-desc">A reflective and educational piece on female genital mutilation, its persistence, and the role of education.</span>
+            </a>
+          </li>
+          <li class="work-item">
+            <a href="https://nimotallahiibraheem.blogspot.com/2025/10/akiriboto-beyond-slang.html" target="_blank" rel="noopener noreferrer">
+              <span class="work-title">Akiriboto: Beyond the Slang</span>
+              <span class="work-desc">Explores the meaning behind a Yoruba slang term and explains the related health condition.</span>
+            </a>
+          </li>
+        </ul>
+
+        <h3 class="category">Faith &amp; Islam</h3>
+        <ul class="work-list">
+          <li class="work-item">
+            <a href="https://nimotallahiibraheem.blogspot.com/2026/02/is-there-karma-in-islam-heres-what-ive.html" target="_blank" rel="noopener noreferrer">
+              <span class="work-title">Is There Karma in Islam? Here’s What I’ve Learned.</span>
+              <span class="work-desc">A reflection on reward and justice in Islam, drawing on Qur’anic references.</span>
+            </a>
+          </li>
+        </ul>
+
+        <h3 class="category">Personal growth</h3>
+        <ul class="work-list">
+          <li class="work-item">
+            <a href="https://nimotallahiibraheem.blogspot.com/2025/12/day-8-how-to-start-when-you-feel-behind.html" target="_blank" rel="noopener noreferrer">
+              <span class="work-title">Day 8: How to Start When You Feel Behind</span>
+              <span class="work-desc">A practical piece from a 30-day writing series about beginning again when progress feels slow.</span>
+            </a>
+          </li>
+        </ul>
+
+        <p style="margin-top:1.5rem"><a href="https://nimotallahiibraheem.blogspot.com" target="_blank" rel="noopener noreferrer">Visit my blog for more writing →</a></p>
+      </section>
+
+      <section class="section" id="credentials" aria-labelledby="credentials-title">
+        <h2 class="section-heading" id="credentials-title">Background &amp; development</h2>
+        <ul class="credentials">
+          <li><strong>Nursing education</strong><br><span class="note">Undergraduate nursing student, developing an academic foundation relevant to health communication.</span></li>
+          <li><strong>Writing practice</strong><br><span class="note">Publishing essays and articles online since 2022.</span></li>
+          <li><strong>Virtual assistance training</strong><br><span class="note">Completed executive virtual assistant training through She Leads Africa.</span></li>
+          <li><strong>Digital and literacy advocacy</strong><br><span class="note">World Literacy Foundation ambassador programme participant.</span></li>
+        </ul>
+        <p class="note" style="margin-top:1rem">I’m continuing to build my skills through learning, practice, and independent projects.</p>
+      </section>
+
+      <section class="section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-panel">
+          <h2 class="section-heading" id="contact-title">Let’s work together</h2>
+          <p>I’m open to suitable writing, content creation, and remote opportunities. If you have a project or role in mind, I’d be glad to hear from you.</p>
+          <p><a class="button" href="mailto:nimotallahilolaibraheem@gmail.com">Email me</a></p>
+          <p class="email"><a href="mailto:nimotallahilolaibraheem@gmail.com">nimotallahilolaibraheem@gmail.com</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Nimotallahi Ibraheem. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
